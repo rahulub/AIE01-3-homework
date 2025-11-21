@@ -53,7 +53,9 @@ export default function HotMessCoachUI() {
     try {
       // Use environment variable for backend URL, fallback to localhost for development
       const backendUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
-      const apiEndpoint = `${backendUrl}/chat`
+      // Remove trailing slash if present
+      const cleanBackendUrl = backendUrl.replace(/\/$/, "")
+      const apiEndpoint = `${cleanBackendUrl}/chat`
 
       const response = await fetch(apiEndpoint, {
         method: "POST",
