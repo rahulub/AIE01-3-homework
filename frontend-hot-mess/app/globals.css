@@ -4,32 +4,32 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Playful, chaotic color scheme */
-  --background: hsl(280 40% 98%);
-  --foreground: hsl(280 30% 15%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(280 30% 15%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(280 30% 15%);
-  --primary: hsl(280 65% 55%);
-  --primary-foreground: hsl(0 0% 100%);
-  --secondary: hsl(320 70% 65%);
-  --secondary-foreground: hsl(280 30% 15%);
-  --muted: hsl(280 30% 95%);
-  --muted-foreground: hsl(280 20% 45%);
-  --accent: hsl(250 85% 65%);
-  --accent-foreground: hsl(0 0% 100%);
-  --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(280 40% 85%);
-  --input: hsl(280 40% 90%);
-  --ring: hsl(280 65% 55%);
-  --chart-1: hsl(320 70% 65%);
-  --chart-2: hsl(280 65% 55%);
-  --chart-3: hsl(240 75% 60%);
-  --chart-4: hsl(200 80% 55%);
-  --chart-5: hsl(50 90% 60%);
-  --radius: 0.75rem;
+  /* <CHANGE> Playful chaotic color scheme with pink, teal, and warm tones */
+  --background: oklch(0.98 0.02 320);
+  --foreground: oklch(0.25 0.05 280);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.25 0.05 280);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.25 0.05 280);
+  --primary: oklch(0.65 0.24 330);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.68 0.18 200);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.94 0.03 320);
+  --muted-foreground: oklch(0.55 0.05 280);
+  --accent: oklch(0.82 0.2 85);
+  --accent-foreground: oklch(0.25 0.05 280);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.88 0.04 320);
+  --input: oklch(0.95 0.03 320);
+  --ring: oklch(0.65 0.24 330);
+  --chart-1: oklch(0.65 0.24 330);
+  --chart-2: oklch(0.68 0.18 200);
+  --chart-3: oklch(0.82 0.2 85);
+  --chart-4: oklch(0.7 0.22 260);
+  --chart-5: oklch(0.75 0.18 160);
+  --radius: 1.25rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -41,25 +41,31 @@
 }
 
 .dark {
-  --background: hsl(280 30% 10%);
-  --foreground: hsl(280 10% 95%);
-  --card: hsl(280 30% 12%);
-  --card-foreground: hsl(280 10% 95%);
-  --popover: hsl(280 30% 10%);
-  --popover-foreground: hsl(280 10% 95%);
-  --primary: hsl(280 65% 60%);
-  --primary-foreground: hsl(0 0% 100%);
-  --secondary: hsl(320 60% 50%);
-  --secondary-foreground: hsl(0 0% 100%);
-  --muted: hsl(280 30% 20%);
-  --muted-foreground: hsl(280 10% 60%);
-  --accent: hsl(250 70% 55%);
-  --accent-foreground: hsl(0 0% 100%);
-  --destructive: hsl(0 62.8% 30.6%);
-  --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(280 30% 25%);
-  --input: hsl(280 30% 20%);
-  --ring: hsl(280 65% 60%);
+  /* <CHANGE> Dark mode with vibrant accent colors */
+  --background: oklch(0.18 0.03 280);
+  --foreground: oklch(0.95 0.02 320);
+  --card: oklch(0.22 0.03 280);
+  --card-foreground: oklch(0.95 0.02 320);
+  --popover: oklch(0.22 0.03 280);
+  --popover-foreground: oklch(0.95 0.02 320);
+  --primary: oklch(0.75 0.24 330);
+  --primary-foreground: oklch(0.18 0.03 280);
+  --secondary: oklch(0.72 0.18 200);
+  --secondary-foreground: oklch(0.18 0.03 280);
+  --muted: oklch(0.28 0.03 280);
+  --muted-foreground: oklch(0.65 0.05 280);
+  --accent: oklch(0.82 0.2 85);
+  --accent-foreground: oklch(0.18 0.03 280);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.95 0.02 320);
+  --border: oklch(0.32 0.03 280);
+  --input: oklch(0.28 0.03 280);
+  --ring: oklch(0.75 0.24 330);
+  --chart-1: oklch(0.75 0.24 330);
+  --chart-2: oklch(0.72 0.18 200);
+  --chart-3: oklch(0.82 0.2 85);
+  --chart-4: oklch(0.7 0.22 260);
+  --chart-5: oklch(0.75 0.18 160);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -71,7 +77,8 @@
 }
 
 @theme inline {
-  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -119,31 +126,45 @@
   }
 }
 
+/* <CHANGE> Added playful animations and effects */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
 @keyframes float {
   0%,
   100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20px) rotate(10deg);
+    transform: translateY(-10px);
   }
 }
 
-@keyframes slide-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+@keyframes pulse-color {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  50% {
+    filter: hue-rotate(20deg);
   }
+}
+
+.animate-wiggle {
+  animation: wiggle 2s ease-in-out infinite;
 }
 
 .animate-float {
-  animation: float 4s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
 
-.animate-slide-in {
-  animation: slide-in 0.3s ease-out forwards;
+.animate-pulse-color {
+  animation: pulse-color 4s ease-in-out infinite;
 }
