@@ -49,11 +49,22 @@ export default function HotMessCoachPage() {
     setIsLoading(true)
 
     try {
-      // Use environment variable or fallback to localhost for development
-      const backendUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
+      // Use environment variable or fallback
+      let backendUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
+      
+      // In production (browser), if env var is not set and we're not on localhost, use the known backend URL
+      if (typeof window !== "undefined" && 
+          !process.env.NEXT_PUBLIC_API_URL && 
+          window.location.hostname !== "localhost" && 
+          window.location.hostname !== "127.0.0.1") {
+        // Fallback to the known backend URL if env var is missing in production
+        backendUrl = "https://aie-01-3-homework-dkc89lse1-rahul-bs-projects-69836e3e.vercel.app"
+      }
+      
       const apiUrl = `${backendUrl}/chat`
       
       console.log("[HotMessCoach] Calling API:", apiUrl)
+      console.log("[HotMessCoach] Env var NEXT_PUBLIC_API_URL:", process.env.NEXT_PUBLIC_API_URL || "NOT SET")
       
       const response = await fetch(apiUrl, {
         method: "POST",
