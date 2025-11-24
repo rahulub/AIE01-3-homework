@@ -49,7 +49,7 @@ export default function HotMessCoachPage() {
     setIsLoading(true)
 
     try {
-      const response = await fetch("https://aie-01-3-homework-dkc89lse1-rahul-bs-projects-69836e3e.vercel.app", {
+      const response = await fetch("https://aie-01-3-homework-dkc89lse1-rahul-bs-projects-69836e3e.vercel.app/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
