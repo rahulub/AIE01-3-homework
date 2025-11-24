@@ -49,7 +49,13 @@ export default function HotMessCoachPage() {
     setIsLoading(true)
 
     try {
-      const response = await fetch("https://aie-01-3-homework-dkc89lse1-rahul-bs-projects-69836e3e.vercel.app/chat", {
+      // Use environment variable or fallback to localhost for development
+      const backendUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
+      const apiUrl = `${backendUrl}/chat`
+      
+      console.log("[HotMessCoach] Calling API:", apiUrl)
+      
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -58,10 +64,16 @@ export default function HotMessCoachPage() {
       })
 
       if (!response.ok) {
-        throw new Error("Failed to get response")
+        const errorText = await response.text()
+        console.error("[HotMessCoach] API Error:", response.status, errorText)
+        throw new Error(`API returned ${response.status}: ${errorText || "Unknown error"}`)
       }
 
       const data = await response.json()
+      
+      if (!data.reply) {
+        throw new Error("Invalid response format: missing 'reply' field")
+      }
 
       const assistantMessage: Message = {
         role: "assistant",
@@ -71,10 +83,12 @@ export default function HotMessCoachPage() {
 
       setMessages((prev) => [...prev, assistantMessage])
     } catch (error) {
-      console.error("[v0] Error calling API:", error)
+      console.error("[HotMessCoach] Error calling API:", error)
       const errorMessage: Message = {
         role: "assistant",
-        content: "Oops! Something went a bit sideways there. Can you try again? 💫",
+        content: error instanceof Error 
+          ? `Oops! Something went wrong: ${error.message}. Can you try again? 💫`
+          : "Oops! Something went a bit sideways there. Can you try again? 💫",
         timestamp: new Date(),
       }
       setMessages((prev) => [...prev, errorMessage])
